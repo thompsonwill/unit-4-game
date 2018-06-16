@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Crystal Collector</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  
+<!-- Random Number to guess-->
+<h1 class="text-center" id="gameStatus"></h1>
+<h1 class="text-center">Number to guess:</h1>
+<h2 class="text-center" id="random-number"></h2><hr><br>
+
+
+<!-- Placeholder "crystals" -->
+<div class="btn-container">
+  <center>
+<button id="crystal1" type="button" class="btn btn-primary crystal">Crystal 1</button>
+<button id="crystal2" type="button" class="btn btn-primary crystal">Crystal 2</button>
+<button id="crystal3" type="button" class="btn btn-primary crystal">Crystal 3</button>
+<button id="crystal4" type="button" class="btn btn-primary crystal">Crystal 4</button>
+</center>
+</div>
+<hr>
+
+<!-- Your number -->
+<h1 class="text-center">Your score:</h1>
+<h2 class="text-center" id="user-score"></h2><br>
+
+<h1 class="text-center">Wins:</h1>
+<h2 class="text-center" id="userWins">0</h2>
+<h1 class="text-center">Losses:</h1>
+<h2 class="text-center" id="userLoss">0</h2>
+
+
+<script>
+$(document).ready(function() {
+
+//Initialize the game
+function initializeGame() {
+      userNum = "";
+      userScore = "";
+      var minNumber = 9;
+      var maxNumber = 120;
+      var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+      $("#random-number").text(randomNumber);
+    }
+
+//Setting up variables to create our computer's random number function
+var minNumber = 9;
+var maxNumber = 120;
+var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+
+//Creates our random number for the computer's
+function randomNumberFromRange(min, max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+console.log(randomNumber);
+
+// Puts our random number in the document.
+$("#random-number").text(randomNumber);
+
+
+//Setting up the variables for functionality
+var userNum = 0;
+var userScore = 0;
+var youWin = false;
+var userWins = 0;
+var userLoss = 0;
+
+//Displying the crystals number on the document. Oh boy this is ugly.
+
+
+$("#crystal1").on("click", function() {
+  //Checks userScore and adds the current value of the crystal
+  userScore = userScore + crysRandomNum1;
+  $("#user-score").text(userScore);
+
+  //Checking if you win and adds your win to the scoreboard
+  if (userScore === randomNumber) {
+  $("#gameStatus").text("You win!");
+  youWin = true;
+  if (youWin === true){
+    userWins ++;
+  $("#userWins").text(userWins);
+}
+}
+  //Checks if you have lost
+  if (userScore > randomNumber) {
+    $("#gameStatus").text("You lose!");
+    initializeGame();
+  }
+});
+
+$("#crystal2").on("click", function() {
+  //Checks userScore and adds the current value of the crystal
+  userScore = userScore + crysRandomNum2;
+  $("#user-score").text(userScore);
+
+  //Checking if you win and adds your win to the scoreboard
+  if (userScore === randomNumber) {
+  $("#gameStatus").text("You win!");
+  youWin = true;
+  if (youWin === true){
+    userWins ++;
+  $("#userWins").text(userWins);
+}
+}
+
+  //Checks if you have lost
+  if (userScore > randomNumber) {
+    $("#gameStatus").text("You lose!");
+    initializeGame();
+  }
+});
+
+$("#crystal3").on("click", function() {
+  //Checks userScore and adds the current value of the crystal
+  userScore = userScore + crysRandomNum3;
+  $("#user-score").text(userScore);
+
+  //Checking if you win and adds your win to the scoreboard
+  if (userScore === randomNumber) {
+  $("#gameStatus").text("You win!");
+  youWin = true;
+  if (youWin === true){
+    userWins ++;
+  $("#userWins").text(userWins);
+}
+}
+  //Checks if you have lost
+  if (userScore > randomNumber) {
+    $("#gameStatus").text("You lose!");
+    initializeGame();
+  }
+});
+
+$("#crystal4").on("click", function() {
+  //Checks userScore and adds the current value of the crystal
+  userScore = userScore + crysRandomNum4;
+  $("#user-score").text(userScore);
+
+  //Checking if you win and adds your win to the scoreboard
+  if (userScore === randomNumber) {
+  $("#gameStatus").text("You win!");
+  youWin = true;
+  if (youWin === true){
+    userWins ++;
+  $("#userWins").text(userWins);
+}
+}
+  //Checks if you have lost and adds a loss to userLoss variable
+  if (userScore > randomNumber) {
+    userLoss ++;
+    $("#gameStatus").text("You lose!");
+    $("#userLoss").text(userLoss);
+  }
+
+});
+
+//Setting up the crystal's random numbers
+var crysMinNum = 1;
+var crysMaxNum = 12;
+
+//Store the random numbers in variables
+var crysRandomNum1 = randomNumberFromRange(crysMinNum, crysMaxNum);
+var crysRandomNum2 = randomNumberFromRange(crysMinNum, crysMaxNum);
+var crysRandomNum3 = randomNumberFromRange(crysMinNum, crysMaxNum);
+var crysRandomNum4 = randomNumberFromRange(crysMinNum, crysMaxNum);
+var crysRandomNum = $(this).val();
+
+//Generate our crystal's random number
+function randomNumberFromRange(min, max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+//Store the random numbers in variables
+console.log(crysRandomNum1);
+console.log(crysRandomNum2);
+console.log(crysRandomNum3);
+console.log(crysRandomNum4);
+
+});
+</script>
+
+</body>
+</html>
