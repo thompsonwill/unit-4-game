@@ -27,7 +27,6 @@ console.log(randomNumber);
 $("#random-number").text(randomNumber);
 
 //Setting up the variables for functionality
-var userNum = 0;
 var userScore = 0;
 var youWin = false;
 var userWins = 0;
@@ -130,7 +129,6 @@ var crysRandomNum1 = randomNumberFromRange(crysMinNum, crysMaxNum);
 var crysRandomNum2 = randomNumberFromRange(crysMinNum, crysMaxNum);
 var crysRandomNum3 = randomNumberFromRange(crysMinNum, crysMaxNum);
 var crysRandomNum4 = randomNumberFromRange(crysMinNum, crysMaxNum);
-var crysRandomNum = $(this).val();
 
 //Generate our crystal's random number
 function randomNumberFromRange(min, max) {
