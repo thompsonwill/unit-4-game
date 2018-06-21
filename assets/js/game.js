@@ -85,26 +85,6 @@ $("#crystal1").on("click", function() {
   }
 });
 
-$("#crystal1").on("click", function() {
-  //Checks userScore and adds the current value of the crystal
-  userScore = userScore + crysRandomNum1;
-  $("#user-score").text(userScore);
-  //Checking if you win and adds your win to the scoreboard
-  if (userScore === randomNumber) {
-    $("#gameStatus").text("You Win!");
-    userWins ++;
-  $("#userWins").text(userWins);
-  initializeGame();
-}
-  //Checks if you have lost
-  if (userScore > randomNumber) {
-    $("#gameStatus").text("You Lose!");
-    initializeGame();
-    userLoss++;
-    $("#userLoss").text(userLoss);
-  }
-});
-
 $("#crystal2").on("click", function() {
   //Checks userScore and adds the current value of the crystal
   userScore = userScore + crysRandomNum2;
