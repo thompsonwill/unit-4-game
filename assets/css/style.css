@@ -1,0 +1,20 @@
+body {
+    background-image: url("../images/bg.png");
+}
+
+.btn-container {
+    background: #fff;
+    margin: auto;
+    width: 40%;
+    border-style: dotted;
+    border-width: 5px;
+}
+
+.game-status {
+    background: #ff6633;
+    margin: auto;
+    padding: 2px;
+    width: 40%;
+    border-style: dotted;
+    border-width: 5px;
+}
